@@ -14,6 +14,13 @@ public class Test {
 		}
 	}
 	
+	public static void test2(int[] array) {
+		System.out.println("다신 변환");
+		for(int i = 0; i < array.length; i++) {
+			array[i] = 0;
+		}
+	}
+	
 	public static void main(String[] args) {
 		int []array = new int[5];
 		
@@ -22,6 +29,9 @@ public class Test {
 		test(array);
 		
 		System.out.println("뭐가 찍히냐?" + Arrays.toString(array));
+		
+		test2(array);
+		System.out.println("마지막 : " + Arrays.toString(array));
 	}
 
 }
