@@ -9,5 +9,9 @@ package ys.codeTest;
  */
 
 public class KClosest {
+	
+	public static void main(String[] args) {
+		
+	}
 
 }
