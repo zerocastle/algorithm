@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 선택 정렬은 배열중 가장 작은 값을 뺀뒤 기준값으로 정한뒤 정렬을 한다-->
+    <!--팁 !!!! 
+        
+        push , pop => 뒤에서 값을 넣고 , 뺸다.
+        unshift , shift => 앞에서 값을 넣고 , 뺸다.
+        
+    -->
+    <script>
+        // 선택 정렬 
+        let a = [10,11,9,2,3,6,5,4];
+        let result = [];
+
+        let size = a.length;
+
+        const getMin = (accumulator , currentValue) => (accumulator  < currentValue)  ?  accumulator : currentValue;
+
+        for(var i = 0; i < size; i++){
+            //result.push(Math.min.apply(null , a));
+            result.push(a.reduce(getMin));
+            a.splice(a.indexOf(Math.min.apply(null,a)) , 1);
+
+            console.log(a);
+
+        }
+
+        console.log('오름차순으로 정렬된 값은 =>' + result);
+
+    </script>
+
+    
+</body>
+</html>

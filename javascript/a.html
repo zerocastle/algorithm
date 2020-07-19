@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--math 라이브러리를 이용한 최대값 최소값 구하기-->
+    <script>
+        let a = [10,20,30,1,2,3,5,9,11];
+
+        // 숫자의 정렬이 아닌 사전적 정렬을 한다.
+        let result = a.sort();
+
+        console.log('result = > ' + result);
+
+        let max = Math.max.apply(null,a);
+
+        let min = Math.min.apply(null,a);
+
+        console.log('max : ' + max + '||' +  min);
+
+
+        let temp = 0;
+
+        for(let i = 0; i < a.length; i++){
+            
+            if(temp < a[i]){
+                temp = a[i];
+            }
+        }
+
+        console.log('알고리즘 이용 큰값 구하기 = > ' + temp);
+
+
+        let temp2 = a[0];
+
+        for(let i; i < a.length; i++){
+            if(temp2 > a[i]){
+                temp2 = a[i];
+            }
+        }
+
+        console.log('알고리즘 이용 작은 값 구하기 =>' + temp2);
+
+    </script>
+    
+</body>
+</html>
