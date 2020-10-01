@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // for문으로 
+
+        // let num = 11;
+        // let result = '';
+
+        // while (true) {
+
+        //     if (num % 2 == 1) {
+        //         result += '1';
+        //     } else {
+        //         result += '0';
+        //     }
+
+        //     num = Math.floor(num / 2);
+
+        //     if (num == 0 || num == 1) {
+        //         result = result + String(num);
+        //         break;
+        //     }
+
+        // }
+
+        // console.log(result.split('').reverse().join(''));
+
+        // 앞부분에 올거를 먼저 생각을 하자
+        let 이진법 = function(x){
+
+            if(x == '0' || x == '1'){
+                return x;
+            }else{
+                return 이진법(Math.floor(x / 2)) + String(x % 2); 
+            }
+        }
+
+        console.log(이진법(11));
+
+    </script>
+
+</body>
+
+</html>

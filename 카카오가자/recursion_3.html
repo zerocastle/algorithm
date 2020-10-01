@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // let x = "KimYoungSung";
+        // let result = '';
+
+        // while (true) {
+
+        //     if (x.length == 1) {
+        //         result += x;
+        //         break;
+        //     }
+
+        //     let y = x.split('');
+        //     result += y.pop();
+        //     x = y.join('');
+        // }
+
+        // console.log(`결과값 : ${result}`);
+
+
+        // recursion 변환
+
+        let 문자열역순 = function (문자) {
+            if (문자.length == 1) {
+                return 문자;
+            } else {
+                return 문자[문자.length - 1] + 문자열역순(문자.slice(0,문자.length - 1));
+            }
+        }
+        console.log(문자열역순('KimYoungSung'));
+
+    </script>
+
+</body>
+
+</html>
