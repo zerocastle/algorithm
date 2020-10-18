@@ -23,10 +23,10 @@ public class Lotto {
 	private static final double LOTTO_PERCENT = 0.0000122774;
 	private Type type;
 
-	// ¼ýÀÚ¸¦ ÆÇ´ÜÇÏ°í isEuqalState ¸Þ¼­µå°¡ true·Î ¹ÝÈ¯ÇÏ¸é ¼ýÀÚ¸¦ ´ã´Â´Ù.
+	// ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ç´ï¿½ï¿½Ï°ï¿½ isEuqalState ï¿½Þ¼ï¿½ï¿½å°¡ trueï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½Â´ï¿½.
 //	private int temp;
-	// ´çÃ· ¹øÈ£¸¦ ´ã´Â °ª
-	private int array[] = new int[7];
+	// ï¿½ï¿½Ã· ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½
+	private int array[] = new int[6];
 
 	private int counter = 0;
 
@@ -34,22 +34,22 @@ public class Lotto {
 		// TODO Auto-generated constructor stub
 	}
 
-	// ·Î¶Ç È®·ü¿¡ ¸Â´Â ¼ýÀÚ¸é
+	// ï¿½Î¶ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½Â´ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½
 	private boolean isEqualState(int temp) {
 		Random r = new Random();
 
 		if (Math.random() < LOTTO_PERCENT) {
-			System.out.println("È®·ü ¿¡ °É·È½À´Ï´Ù." + temp + type.SUCCESS.type);
+			System.out.println("È®ï¿½ï¿½ ï¿½ï¿½ ï¿½É·È½ï¿½ï¿½Ï´ï¿½." + temp + type.SUCCESS.type);
 			return type.SUCCESS.type;
 
 		} else {
-			System.out.println("³ª°¡¸® : " + temp + type.FAIL.type);
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " + temp + type.FAIL.type);
 			return type.FAIL.type;
 		}
 
 	}
 
-	// Áßº¹À» ¹èÁ¦ÇÏ±â À§ÇÔ
+	// ï¿½ßºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½
 	private boolean isSamSam(int[] array) {
 
 		for (int i = 0; i < array.length; i++) {
@@ -70,9 +70,10 @@ public class Lotto {
 		while (true) {
 			temp = (int) (Math.random() * 45) + 1;
 			if (lotto.isEqualState(temp) == true) {
-				System.out.println("³Í ¹¹°¡ ÂïÈ÷¾ß?" + lotto.isEqualState(temp));
+				System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?" + lotto.isEqualState(temp));
 				lotto.array[lotto.counter] = temp;
-				System.out.println("´çÃ· ¼ýÀÚ : " + Arrays.toString(lotto.array));
+//				Arrays.sort(lotto.array);
+				System.out.println("ï¿½ï¿½Ã· ï¿½ï¿½ï¿½ï¿½ : " + Arrays.toString(lotto.array));
 				lotto.counter++;
 			}
 			if (lotto.counter == lotto.array.length) {

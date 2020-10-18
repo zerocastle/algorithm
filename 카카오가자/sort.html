@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택정렬</title>
+</head>
+<body>
+
+    <script>
+        let 입력값 = [5,10,66,77,54,32,11,15];
+        let length = 입력값.length;
+        let 결과값 = [];
+
+        for(let i = 0; i < length; i++){
+            let min = Math.min.apply(null,입력값);
+            결과값.push(입력값.splice(입력값.indexOf(min),1));
+        }
+
+        console.log(`결과값 = > ${결과값}`);
+
+    </script>
+    
+</body>
+</html>

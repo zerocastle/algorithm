@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let 입력값 = [5, 10, 66, 77, 54, 32, 11, 15];
+        let 배열의길이 = 입력값.length;
+
+        function 퀵정렬(입략배열){
+
+            if(입략배열.length <= 1){
+                return 입략배열;
+            }
+
+            let 피벗값 = 입략배열.shift();
+            let 그룹하나 = [];
+            let 그룹둘 = [];
+
+            for (let i in 입략배열) {
+                if(입략배열[i] < 피벗값){
+                    그룹하나.push(입략배열[i]);
+                }else{
+                    그룹둘.push(입략배열[i]);
+                }
+            }
+
+            return 퀵정렬(그룹하나).concat(피벗값,퀵정렬(그룹둘));
+
+        }
+
+        console.log(퀵정렬(입력값));
+
+    </script>
+</body>
+
+</html>

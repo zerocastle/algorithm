@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 최솟값과 최댓값
+        let a = [10, 20, 30, 1, 2, 3, 5, 9, 11];
+
+        let max = Math.max.apply(null, a);
+        let min = Math.min.apply(null, a);
+
+        console.log(`max = >  ${max}`);
+
+        console.log(`min = > ${min}`);
+
+        //Math.max()
+        //Math.min()
+
+        let std = a[0];
+        for (var v of a) {
+            if (v < std) {
+                std = v;
+            }
+        }
+
+        console.log(std);
+
+        // 최대값 , 최소값 
+        let b = [6, 5, 4, 3, 2];
+
+        let max2 = Math.max.apply(null, b);
+        let min2 = Math.min.apply(null, b);
+
+        const fMax = (accumulator, currenValue) =>  accumulator > currenValue ? accumulator : currenValue ;
+        const fMin = (accumulator, currenValue) =>  accumulator < currenValue ? accumulator : currenValue ;
+
+        console.log(`max2=> ${max2} min2 = > ${min2} fMax => ${b.reduce(fMax)} fMin => ${b.reduce(fMin)}`);
+
+        console.log(b.reduce(fMax));
+
+
+
+
+    </script>
+
+</body>
+
+</html>
